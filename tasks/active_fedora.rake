@@ -52,7 +52,8 @@ namespace :active_fedora do
 
 
   Spec::Rake::SpecTask.new(:rspec) do |t|
-    t.spec_files = FileList['spec/**/*_spec.rb']
+    t.spec_files = FileList['spec/**/*_spec.rb'].sort
+    puts t.spec_files.inspect
     # removing because of en suite failures on hudson
     #t.spec_files.delete 'spec/unit/nokogiri_datastream_spec.rb'
     #t.spec_files.delete 'spec/integration/nokogiri_datastream_spec.rb'
